@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Osteria Ducale Marigliano</title>
+<meta name="description" content="Osteria Ducale, Piazza Castello 22, Marigliano (NA). Cucina napoletana di tradizione con proposta vegana. Prenotazioni al 392 353 5629.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Layout: la palette del logo (verde bottiglia + oro) — testata, hero divisa testo/foto, sezioni a banda alterna */
+  --verde:#12302a;
+  --verde-2:#1a3d35;
+  --verde-3:#25504a;
+  --oro:#c9a464;
+  --oro-chiaro:#e3c992;
+  --tufo:#f3ede1;
+  --testo:#ece6d8;
+  --testo-2:#b9c2b8;
+  --f-logo:"Allura", "Brush Script MT", cursive;
+  --f-display:"Cormorant", "Cormorant Garamond", Georgia, serif;
+  --f-body:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--verde);color:var(--testo);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--oro-chiaro)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--oro-chiaro);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;line-height:1.08;text-wrap:balance;margin:0;color:var(--tufo)}
+h2{font-size:clamp(2.1rem,4.4vw,3.2rem)}
+h3{font-size:1.55rem}
+p{margin:0}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.kicker{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:.55em;padding:.85em 1.35em;border-radius:999px;font-weight:600;text-decoration:none;font-size:.95rem;border:1px solid var(--oro);cursor:pointer;font-family:var(--f-body)}
+.btn-oro{background:var(--oro);color:var(--verde)}
+.btn-oro:hover{background:var(--oro-chiaro)}
+.btn-line{background:transparent;color:var(--oro-chiaro)}
+.btn-line:hover{background:rgba(201,164,100,.12)}
+
+/* anteprima */
+.preview{background:var(--oro);color:var(--verde);font-size:.82rem;text-align:center;padding:.45em 16px;font-weight:600}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(18,48,42,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,164,100,.22)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--oro)}
+.logo svg{width:46px;height:46px;flex:none}
+.logo span{font-family:var(--f-logo);font-size:2.15rem;line-height:1;color:var(--oro)}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--testo);text-decoration:none;font-size:.92rem;font-weight:500}
+.nav ul a:hover{color:var(--oro-chiaro)}
+.nav .btn{padding:.6em 1.1em}
+@media (max-width:880px){.nav ul{display:none}}
+@media (max-width:420px){.nav .btn span.lungo{display:none}.logo span{font-size:1.8rem}}
+
+/* hero */
+.hero{padding:56px 0 64px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.7rem,5.6vw,4.6rem);margin:.35em 0 .4em}
+.hero h1 em{font-style:italic;color:var(--oro-chiaro);font-weight:500}
+.hero p.lead{color:var(--testo-2);font-size:1.12rem;max-width:34em}
+.hero .azioni{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-foto{position:relative}
+.hero-foto img{border-radius:180px 180px 14px 14px;aspect-ratio:4/4.6;object-fit:cover;width:100%;border:1px solid rgba(201,164,100,.35)}
+.hero-foto .badge{position:absolute;left:-22px;bottom:34px;background:var(--tufo);color:var(--verde);padding:14px 18px;border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.35);max-width:230px}
+.badge strong{font-family:var(--f-display);font-size:1.9rem;display:block;line-height:1}
+.badge small{font-size:.8rem;display:block;margin-top:4px}
+.credito{font-size:.72rem;color:var(--testo-2);margin-top:8px;opacity:.8}
+@media (max-width:880px){.hero-grid{grid-template-columns:1fr}.hero-foto{max-width:480px}.hero-foto .badge{left:12px}}
+
+/* fascia info */
+.fascia{border-block:1px solid rgba(201,164,100,.25);background:var(--verde-2)}
+.fascia .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.fascia div.item{padding:22px 18px;border-left:1px solid rgba(201,164,100,.18)}
+.fascia div.item:first-child{border-left:0}
+.fascia b{display:block;font-family:var(--f-display);font-size:1.6rem;color:var(--oro-chiaro);font-weight:600;font-variant-numeric:tabular-nums}
+.fascia span{font-size:.86rem;color:var(--testo-2)}
+@media (max-width:760px){.fascia .wrap{grid-template-columns:1fr 1fr}.fascia div.item:nth-child(3){border-left:0}.fascia div.item{border-top:1px solid rgba(201,164,100,.18)}.fascia div.item:nth-child(-n+2){border-top:0}}
+
+section{padding:88px 0}
+.intesta{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.intesta p{color:var(--testo-2);max-width:32em}
+
+/* piatti */
+.piatti{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.piatto{background:var(--verde-2);border:1px solid rgba(201,164,100,.18);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.piatto img{aspect-ratio:4/3.2;object-fit:cover;width:100%}
+.piatto .corpo{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.piatto p{color:var(--testo-2);font-size:.95rem}
+.tag{align-self:flex-start;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:.3em .7em;border-radius:999px;border:1px solid var(--oro);color:var(--oro-chiaro);font-weight:600}
+.tag.veg{border-color:#8fb58a;color:#b7d8b1}
+.piatto.testo{justify-content:center;background:linear-gradient(160deg,var(--verde-3),var(--verde-2))}
+.piatto.testo .corpo{justify-content:center}
+.piatto.testo ul{list-style:none;padding:0;margin:6px 0 0;display:grid;gap:14px}
+.piatto.testo li{border-bottom:1px dashed rgba(201,164,100,.3);padding-bottom:12px}
+.piatto.testo li b{font-family:var(--f-display);font-size:1.3rem;color:var(--tufo);font-weight:600;display:block}
+.piatto.testo li span{font-size:.88rem;color:var(--testo-2)}
+@media (max-width:960px){.piatti{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.piatti{grid-template-columns:1fr}}
+.nota{font-size:.8rem;color:var(--testo-2);margin-top:22px}
+
+/* veg */
+.veg-sez{background:var(--tufo);color:var(--verde)}
+.veg-sez h2{color:var(--verde)}
+.veg-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.veg-grid img{border-radius:14px;aspect-ratio:1/1.02;object-fit:cover}
+.veg-sez .kicker{color:#7a5a24}
+.veg-sez p{color:#3e4f49;margin-top:16px;max-width:34em}
+.lista-veg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.lista-veg div{border:1px solid rgba(18,48,42,.2);border-radius:10px;padding:14px 16px;background:#fbf8f1}
+.lista-veg b{font-family:var(--f-display);font-size:1.25rem;display:block}
+.lista-veg small{color:#55655f}
+.veg-sez .credito{color:#55655f}
+@media (max-width:880px){.veg-grid{grid-template-columns:1fr}.veg-grid img{max-width:460px}}
+@media (max-width:460px){.lista-veg{grid-template-columns:1fr}}
+
+/* galleria */
+.galleria{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin;scrollbar-color:var(--oro) transparent}
+.galleria figure{flex:0 0 min(340px,78vw);margin:0;scroll-snap-align:start;min-width:0}
+.galleria img{aspect-ratio:4/5;object-fit:cover;border-radius:12px;width:100%}
+.galleria figcaption{font-size:.82rem;color:var(--testo-2);margin-top:8px}
+.frecce{display:flex;gap:10px}
+.frecce button{width:46px;height:46px;border-radius:50%;border:1px solid var(--oro);background:transparent;color:var(--oro-chiaro);font-size:1.2rem;cursor:pointer}
+.frecce button:hover{background:rgba(201,164,100,.12)}
+
+/* luogo */
+.luogo{background:var(--verde-2);border-block:1px solid rgba(201,164,100,.2)}
+.luogo-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.luogo p{color:var(--testo-2);margin-top:16px;max-width:34em}
+.luogo svg{width:100%;height:auto}
+.timeline{display:grid;gap:0;margin-top:26px;border-left:1px solid var(--oro);padding-left:20px}
+.timeline div{padding:8px 0}
+.timeline b{color:var(--oro-chiaro);font-family:var(--f-display);font-size:1.25rem;font-variant-numeric:tabular-nums;margin-right:8px}
+.timeline span{color:var(--testo-2);font-size:.93rem}
+@media (max-width:880px){.luogo-grid{grid-template-columns:1fr}}
+
+/* prenota */
+.prenota-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+.orari{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:0}
+.orari li{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid rgba(201,164,100,.18);font-variant-numeric:tabular-nums}
+.orari li span:first-child{color:var(--tufo);font-weight:500}
+.orari li span:last-child{color:var(--testo-2);text-align:right}
+.orari li.chiuso span:last-child{color:#d79b8a}
+.recapiti{margin-top:26px;display:grid;gap:10px}
+.recapiti div{display:flex;gap:12px;align-items:baseline}
+.recapiti dt{min-width:92px;color:var(--oro);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.recapiti dd{margin:0}
+form{background:var(--verde-2);border:1px solid rgba(201,164,100,.3);border-radius:16px;padding:28px;display:grid;gap:16px}
+form h3{margin-bottom:2px}
+.riga{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{font-size:.82rem;color:var(--testo-2);display:grid;gap:6px;font-weight:500}
+input,select,textarea{font:inherit;font-size:.97rem;color:var(--tufo);background:var(--verde);border:1px solid rgba(201,164,100,.35);border-radius:10px;padding:.7em .85em;width:100%}
+textarea{min-height:84px;resize:vertical}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.82rem}
+.check input{width:auto;margin-top:4px}
+.esito{font-size:.88rem;color:var(--oro-chiaro);min-height:1.2em}
+@media (max-width:880px){.prenota-grid{grid-template-columns:1fr}}
+@media (max-width:460px){.riga{grid-template-columns:1fr}}
+
+footer{border-top:1px solid rgba(201,164,100,.22);padding:40px 0 60px;font-size:.86rem;color:var(--testo-2)}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer .logo span{font-size:1.8rem}
+
+.float-wa{position:fixed;right:18px;bottom:18px;z-index:30;background:var(--oro);color:var(--verde);border-radius:999px;padding:.8em 1.15em;font-weight:700;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,.4);font-size:.9rem}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}.btn,.frecce button{transition:background .2s}}
+</style>
+</head>
+<body>
+
+<div class="preview">Anteprima del nuovo sito · bozza riservata per Osteria Ducale</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Osteria Ducale, torna su">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="31" fill="#1a3d35" stroke="#c9a464" stroke-width="1.2"/><g fill="none" stroke="#c9a464" stroke-width="1.3" stroke-linejoin="round"><path d="M14 46V24h8v-5h6v5h8v-5h6v5h8v22z"/><path d="M14 30h36M22 46V34h6v12M36 46V34h6v12M30 24v-8h4v8"/><path d="M10 46h44"/></g></svg>
+      <span>Osteria Ducale</span>
+    </a>
+    <ul>
+      <li><a href="#cucina">La cucina</a></li>
+      <li><a href="#vegano">Anche vegano</a></li>
+      <li><a href="#galleria">Foto</a></li>
+      <li><a href="#luogo">Il Castello</a></li>
+      <li><a href="#prenota">Orari</a></li>
+    </ul>
+    <a class="btn btn-oro" href="#prenota">Prenota <span class="lungo">un tavolo</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker">Piazza Castello 22 · Marigliano</div>
+        <h1>La cucina di casa, <em>sotto il Castello Ducale</em></h1>
+        <p class="lead">Un luogo che sa di casa e di tempo ritrovato. Piatti della tradizione napoletana preparati con cura, porzioni generose e una proposta vegana pensata per tutti, non come ripiego.</p>
+        <div class="azioni">
+          <a class="btn btn-oro" href="#prenota">Prenota un tavolo</a>
+          <a class="btn btn-line" href="tel:+393923535629">Chiama 392 353 5629</a>
+        </div>
+      </div>
+      <div class="hero-foto">
+        <img src="img/nerano-chef.webp" alt="Lo chef in cucina manteca gli spaghetti alla Nerano in padella, una foglia di basilico cade nella pentola" width="805" height="851">
+        <div class="badge"><strong>4,7 ★</strong><small>media su Google, 127 recensioni</small></div>
+        <p class="credito">Foto Instagram dell'osteria (ph. @imma.petricciuoli) · da autorizzare</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="fascia">
+    <div class="wrap">
+      <div class="item"><b>Napoletana</b><span>cucina di tradizione</span></div>
+      <div class="item"><b>Veg</b><span>3–5 piatti vegani in carta</span></div>
+      <div class="item"><b>Sab · Dom</b><span>aperti anche a pranzo</span></div>
+      <div class="item"><b>Dehors</b><span>tavoli all'aperto d'estate</span></div>
+    </div>
+  </div>
+
+  <section id="cucina">
+    <div class="wrap">
+      <div class="intesta">
+        <div>
+          <div class="kicker">La cucina</div>
+          <h2>I piatti per cui si torna</h2>
+        </div>
+        <p>Pochi piatti, fatti bene, con i tempi della cucina di casa. Questi sono quelli che gli ospiti nominano di più.</p>
+      </div>
+      <div class="piatti">
+        <article class="piatto">
+          <img src="img/pasta-patate-3.webp" alt="Pasta e patate con provola filante versata dalla pentola nel piatto" loading="lazy" width="805" height="938">
+          <div class="corpo">
+            <span class="tag">Il più richiesto</span>
+            <h3>Pasta, patate e provola</h3>
+            <p>Mista corta, patate e provola che fila dal mestolo. C'è chi dice sia la più buona mai mangiata.</p>
+          </div>
+        </article>
+        <article class="piatto">
+          <img src="img/nerano-cucchiaio.webp" alt="Spaghetti alla Nerano con zucchine fritte e basilico in un piatto scuro" loading="lazy" width="805" height="851">
+          <div class="corpo">
+            <span class="tag">D'estate</span>
+            <h3>Spaghetti alla Nerano</h3>
+            <p>Zucchine fritte, basilico e una mantecatura cremosa. Il profumo arriva prima del piatto.</p>
+          </div>
+        </article>
+        <article class="piatto testo">
+          <div class="corpo">
+            <div class="kicker">Dalla carta</div>
+            <ul>
+              <li><b>Genovese</b><span>la ricetta napoletana, cotta lenta</span></li>
+              <li><b>Parmigiana</b><span>anche nella versione vegana</span></li>
+              <li><b>Polpette di lenticchie</b><span>il secondo vegano della casa</span></li>
+              <li><b>Zuppe di stagione</b><span>secondo il mercato</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <p class="nota">Piatti citati sui profili dell'osteria e nelle recensioni. Menu completo, prezzi e allergeni: da inserire con il titolare.</p>
+    </div>
+  </section>
+
+  <section class="veg-sez" id="vegano">
+    <div class="wrap veg-grid">
+      <img src="img/nerano-plating.webp" alt="Spaghetti raccolti con la pinza e adagiati in una ciotola nera" loading="lazy" width="805" height="851">
+      <div>
+        <div class="kicker">Anche vegano</div>
+        <h2>Allo stesso tavolo, lo stesso gusto</h2>
+        <p>All'Osteria Ducale chi mangia vegano non sceglie tra due insalate. Ci sono antipasti, primi, secondi e dolci pensati apposta, segnalati in carta, con un personale che sa rispondere alle domande.</p>
+        <p>Una proposta che lo chef ha raccontato anche in diretta su Canale 21.</p>
+        <div class="lista-veg">
+          <div><b>Parmigiana vegana</b><small>il piatto più consigliato</small></div>
+          <div><b>Polpette di lenticchie</b><small>al sugo, secondo vegano della casa</small></div>
+          <div><b>Seitan e ceci</b><small>nei secondi di stagione</small></div>
+          <div><b>Dolce vegano</b><small>sempre almeno uno</small></div>
+        </div>
+        <p class="credito">Foto Instagram dell'osteria · da autorizzare</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="galleria">
+    <div class="wrap">
+      <div class="intesta">
+        <div>
+          <div class="kicker">Dalla cucina</div>
+          <h2>Mani, padelle e vapore</h2>
+        </div>
+        <div class="frecce">
+          <button type="button" id="prev" aria-label="Foto precedente">←</button>
+          <button type="button" id="next" aria-label="Foto successiva">→</button>
+        </div>
+      </div>
+      <div class="galleria" id="scorri" tabindex="0" aria-label="Galleria fotografica">
+        <figure><img src="img/pasta-patate-1.webp" alt="Formaggio grattugiato che cade sulla pasta e patate in pentola" loading="lazy"><figcaption>Pasta e patate, la mantecatura</figcaption></figure>
+        <figure><img src="img/nerano-chef2.webp" alt="Lo chef spolvera il formaggio sugli spaghetti in padella" loading="lazy"><figcaption>Nerano, il formaggio</figcaption></figure>
+        <figure><img src="img/pasta-patate-2.webp" alt="Mestolo di pasta e patate con provola filante" loading="lazy"><figcaption>La provola che fila</figcaption></figure>
+        <figure><img src="img/nerano-1.webp" alt="Spaghetti alla Nerano sollevati dalla padella" loading="lazy"><figcaption>Spaghetti alla Nerano</figcaption></figure>
+        <figure><img src="img/nerano-cucchiaio.webp" alt="Zucchine e basilico versati sugli spaghetti" loading="lazy"><figcaption>Zucchine e basilico</figcaption></figure>
+      </div>
+      <p class="nota">Foto pubblicate sul profilo Instagram @osteriaducale · da autorizzare. Da aggiungere: sala, dehors in piazza, cantina e staff.</p>
+    </div>
+  </section>
+
+  <section class="luogo" id="luogo">
+    <div class="wrap luogo-grid">
+      <div>
+        <div class="kicker">Il luogo</div>
+        <h2>Una piazza con otto secoli di storia</h2>
+        <p>L'osteria è in Piazza Castello, davanti al Palazzo Castello Ducale di Marigliano: nato in epoca normanna come fortezza a difesa del borgo, poi trasformato nella residenza dei duchi. Un edificio in tufo con quattro torri agli angoli, da cui l'osteria prende il nome.</p>
+        <div class="timeline">
+          <div><b>XII sec.</b><span>prima fortezza normanna, a nord-est dell'antica Marilianum</span></div>
+          <div><b>1254</b><span>re Manfredi passa una notte nel castello</span></div>
+          <div><b>1479</b><span>Marigliano passa ad Alberico Carafa, che restaura il castello</span></div>
+          <div><b>Oggi</b><span>a tavola, all'ombra delle sue mura</span></div>
+        </div>
+      </div>
+      <svg viewBox="0 0 520 380" role="img" aria-label="Disegno al tratto del Palazzo Castello Ducale con quattro torri">
+        <g fill="none" stroke="#c9a464" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M30 330h460" />
+          <path d="M60 330V120h70v210M390 330V120h70v210" />
+          <path d="M60 120v-16h14v10h14v-10h14v10h14v-10h14v16M390 120v-16h14v10h14v-10h14v10h14v-10h14v16" />
+          <path d="M130 330V170h260v160" />
+          <path d="M130 170v-14h20v8h20v-8h20v8h20v-8h20v8h20v-8h20v8h20v-8h20v8h20v-8h20v8h20v-8h20v14" />
+          <path d="M228 330v-80a32 32 0 0 1 64 0v80" />
+          <path d="M84 160h22v34H84zM414 160h22v34h-22zM84 240h22v34H84zM414 240h22v34h-22z" />
+          <path d="M160 200h26v40h-26zM334 200h26v40h-26z" />
+          <path d="M60 210h70M390 210h70" opacity=".5"/>
+          <path d="M200 330l-30 30M320 330l30 30M170 360h180" opacity=".6"/>
+        </g>
+        <text x="260" y="372" text-anchor="middle" fill="#b9c2b8" font-family="Manrope, sans-serif" font-size="12" letter-spacing="2">PALAZZO CASTELLO DUCALE · MARIGLIANO</text>
+      </svg>
+    </div>
+  </section>
+
+  <section id="prenota">
+    <div class="wrap prenota-grid">
+      <div>
+        <div class="kicker">Orari e contatti</div>
+        <h2>Ti aspettiamo a tavola</h2>
+        <ul class="orari">
+          <li class="chiuso"><span>Lunedì</span><span>Chiuso</span></li>
+          <li><span>Martedì – Venerdì</span><span>19:30 – 24:00</span></li>
+          <li><span>Sabato</span><span>12:00 – 17:00 · 19:00 – 24:00</span></li>
+          <li><span>Domenica</span><span>12:00 – 16:00</span></li>
+        </ul>
+        <dl class="recapiti">
+          <div><dt>Indirizzo</dt><dd>Piazza Castello 22, 80034 Marigliano (NA)<br><a href="https://www.google.com/maps/search/?api=1&query=Osteria+Ducale+Piazza+Castello+22+Marigliano">Apri in Google Maps</a></dd></div>
+          <div><dt>Telefono</dt><dd><a href="tel:+393923535629">392 353 5629</a></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/osteriaducale/">@osteriaducale</a></dd></div>
+        </dl>
+      </div>
+
+      <form id="form-prenota" novalidate>
+        <h3>Richiedi un tavolo</h3>
+        <p class="credito" style="margin:0">La richiesta parte su WhatsApp: l'osteria ti risponde per confermare.</p>
+        <div class="riga">
+          <label for="f-nome">Nome<input id="f-nome" name="nome" autocomplete="name" required></label>
+          <label for="f-persone">Persone
+            <select id="f-persone" name="persone"><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>più di 8</option></select>
+          </label>
+        </div>
+        <div class="riga">
+          <label for="f-data">Giorno<input id="f-data" name="data" type="date" required></label>
+          <label for="f-ora">Orario<input id="f-ora" name="ora" type="time" step="900" required></label>
+        </div>
+        <label for="f-note">Note (allergie, menu vegano, seggiolone…)<textarea id="f-note" name="note"></textarea></label>
+        <label class="check" for="f-privacy"><input id="f-privacy" type="checkbox" required> Ho letto l'informativa privacy e acconsento a essere ricontattato per la prenotazione.</label>
+        <button class="btn btn-oro" type="submit">Invia su WhatsApp</button>
+        <p class="esito" id="esito" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#top"><span>Osteria Ducale</span></a>
+    <div>Piazza Castello 22 · 80034 Marigliano (NA) · P.IVA da inserire<br>Privacy · Cookie policy</div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/393923535629?text=Ciao%2C%20vorrei%20prenotare%20un%20tavolo%20all%27Osteria%20Ducale">WhatsApp</a>
+
+<script>
+(function(){
+  var s=document.getElementById('scorri');
+  function passo(d){var f=s.querySelector('figure');var w=f?f.getBoundingClientRect().width+16:320;s.scrollBy({left:d*w,behavior:'smooth'});}
+  document.getElementById('prev').addEventListener('click',function(){passo(-1)});
+  document.getElementById('next').addEventListener('click',function(){passo(1)});
+  s.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();passo(1)}if(e.key==='ArrowLeft'){e.preventDefault();passo(-1)}});
+
+  var oggi=new Date();var d=document.getElementById('f-data');
+  d.min=oggi.toISOString().slice(0,10);
+
+  document.getElementById('form-prenota').addEventListener('submit',function(e){
+    e.preventDefault();
+    var es=document.getElementById('esito');
+    var nome=document.getElementById('f-nome').value.trim();
+    var data=d.value, ora=document.getElementById('f-ora').value;
+    if(!nome||!data||!ora){es.textContent='Inserisci nome, giorno e orario.';return;}
+    if(!document.getElementById('f-privacy').checked){es.textContent="Spunta l'informativa privacy per continuare.";return;}
+    var g=new Date(data+'T12:00').getDay();
+    if(g===1){es.textContent="Il lunedì l'osteria è chiusa: scegli un altro giorno.";return;}
+    var dataIt=data.split('-').reverse().join('/');
+    var testo='Ciao, sono '+nome+'. Vorrei prenotare un tavolo per '+document.getElementById('f-persone').value+' persone il '+dataIt+' alle '+ora+'.';
+    var note=document.getElementById('f-note').value.trim(); if(note) testo+=' Note: '+note;
+    var url='https://wa.me/393923535629?text='+encodeURIComponent(testo);
+    es.innerHTML='Messaggio pronto. Se WhatsApp non si apre, <a href="'+url+'">tocca qui</a>. La prenotazione è confermata solo dalla risposta dell’osteria.';
+    var a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();
+  });
+})();
+</script>
+</body>
+</html>
